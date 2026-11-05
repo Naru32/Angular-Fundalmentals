@@ -1,0 +1,19 @@
+<section class="flex flex-col justify-start items-center h-full w-full bg-red-300 gap-1.5">
+    <h1 class="p-1.5 text-red-900 text-2xl">User Data</h1>
+</section>
+
+<div class="grid grid-cols-2 bg-amber-600 py-3">
+    <!-- Interpolation -->
+        <p class="text-xl text-amber-50 p-1.5">Hello, {{user}}</p>
+    <!-- Property binding -->
+        <img [src]="url" alt="">
+<!-- Event binding -->
+        <app-button [btnText]="'Reusable change User'" [btnCss]="'bg-green-400 w-1/2 py-2 rounded text-teal-950'" (trigger)="changeUser()"></app-button>
+
+    <button class="bg-green-400 w-1/2 py-2 rounded text-teal-950" (click)="changeUser()">Change User</button>
+
+    <!-- Two way data binding -->
+   <input type="text" placeholder="enter text here" class= "border border-blue-600 mt-1" name="" id="" value={{display}} [(ngModel)]="display" (input)="Change($event)"> 
+   <p>Data :  {{display}}</p>
+  
+</div>

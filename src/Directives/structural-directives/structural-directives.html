@@ -1,0 +1,42 @@
+<aside class="mt-2 p-2 bg-blue-300 text-white rounded">
+        <h1 class="text-3xl">Structural Directives</h1>
+        <p>*ngIf, *ngFor</p>
+</aside>
+
+<section class="flex flex-col space-y-2.5">
+    <aside class="grid grid-cols-2 gap-x-2.5">
+         <div>
+    <div class="bg-emerald-200 w-full text-center p-11 text-xl text-teal-800" *ngIf="isDiv1Visible">
+        1
+    </div>
+    <span class="flex justify-center gap-1.5"> 
+          <button class="bg-indigo-500 text-white px-4 py-1.5 mt-1 rounded-lg" (click)="div1Show()">Show</button>
+          <button class="bg-green-500 px-4 text-white py-1.5 mt-1 rounded-lg" (click)="div1Hide()">Hide</button> 
+    </span> 
+    </div>
+        <div>
+    <div class="bg-pink-200 w-full text-center p-11 text-xl text-teal-800" *ngIf="isDiv2Visible">
+        2
+    </div>
+    <span class="flex justify-center gap-1.5"> 
+          <button class="bg-indigo-500 text-white px-4 py-1.5 mt-1 rounded-lg" (click)="toggle()">Toggle</button> 
+    </span> 
+    </div>
+    <div>
+        <select name="state" id="state" class="border border-amber-800 bg-amber-50">
+            <option value="">Select a state</option>
+            <option [value]="city" *ngFor="let city of cities">{{city}}</option>
+        </select>
+    </div>
+
+    <input type="text" name="" value={{role}} id="" [(ngModel)]="role">
+
+    <h1 appHighlight>Hii this is custom direcitve</h1>
+
+    <div [ngSwitch]="role">
+        <p *ngSwitchCase="'admin'">Hii, Admin</p>
+        <p *ngSwitchCase="'user'">Hii, User</p>
+        <p *ngSwitchDefault>Hii, Guest</p>
+    </div>
+    </aside>
+</section>

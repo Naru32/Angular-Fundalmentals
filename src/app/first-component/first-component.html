@@ -1,0 +1,15 @@
+<p>first-component works!</p>
+
+ <!-- 4th step -->
+<ul>
+   @for (student of students; track $index) {
+    <li>Name : {{student.name}} | Gender : {{student.gender}} | Age : {{student.age}} <button class="bg-blue-700 text-white px-2.5 py-1 rounded mb-1.5" (click)="viewUser(student.stId)">View</button></li>
+   }
+
+</ul>
+
+<section class="flex gap-x-2">
+   <button class="bg-red-300 px-3 py-2" (click)="onInc()">inc</button>
+   <p>Count : {{count$ | async}}</p>
+   <button class="bg-green-300 px-3 py-2">dec</button>
+</section>

@@ -1,0 +1,88 @@
+<div class="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-md my-3.5">
+  <h2 class="text-2xl font-bold mb-6">Student Registration</h2>
+<!-- step 2 : Bind model to template using formGroup and formControlName -->
+  <form class="space-y-6 flex flex-col items-center" [formGroup]="FormData" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block mb-2 text-sm font-medium" for="Fname">
+          First Name  
+          <span class="text-red-600">*</span>         
+        </label>
+        <input 
+        type="text" 
+        name="Fname" 
+        id="Fname"
+        formControlName="Fname",
+        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+        @if(FormData.controls['Fname'].touched && FormData.controls['Fname'].errors?.['required']){
+            <p class="text-rose-400">Fname is mandatory</p>
+        }
+
+        @else if(FormData.controls['Fname'].touched && FormData.controls['Fname'].errors?.['minlength']) {
+            <p class="text-red-600">Fname must contain atleast 3 characters</p>
+        }
+
+      </div>
+      <div>
+        <label class="block mb-2 text-sm font-medium" for="Lname">
+          Last Name 
+        </label>
+        <input 
+        type="text" 
+        name="Lname" 
+        id="Lname"
+        formControlName="Lname" 
+        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+      <div>
+        <label class="block mb-2 text-sm font-medium" for="age">
+         Age 
+          <span class="text-red-600">*</span>
+        </label>
+        <input 
+        type="number" 
+        name="age" 
+        id="age" 
+        formControlName='age' 
+        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+      <div>
+        <label class="block mb-2 text-sm font-medium" for="city">
+          City
+        </label>
+        <input 
+        type="text" 
+        name="city" 
+        id="city" 
+        formControlName="city"
+        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+      <div>
+        <label class="block mb-2 text-sm font-medium" for="state">
+          State
+        </label>
+        <select 
+        name="state" 
+        id="state" 
+        formControlName="State"
+        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="West bengal">West bengal</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+        </select>
+      </div>
+      </div>
+      <button class="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-emerald-950">Submit</button>
+      <button class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-cyan-700" (click)="onEdit()">Edit</button>
+      <!-- <app-button [btnText]="'Submit'" [btnCss]="'px-3 py-2 rounded text-white bg-green-600'" (trigger)="onSubmit()"></app-button>
+      <app-button [btnText]="'Edit'" [btnCss]="'px-4 py-2 rounded text-white bg-blue-500'" (trigger)="onEdit(text)"></app-button> -->
+      </form>
+      </div>

@@ -1,0 +1,15 @@
+<h1 class="text-2xl text-center font-semibold bg-black text-white">
+    API integration
+</h1>
+<section>
+    @for (stu of student; track $index) {
+        <div class="flex justify-evenly mt-2"> 
+        <h1>{{stu.name}}</h1> <button (click)="editUser(stu.id)" class="bg-violet-400 px-2.5 py-1.5 rounded text-white">Edit</button> <button (click)="deleteUser(stu.id)" class="bg-pink-500 px-2.5 py-1.5 rounded text-white">Delete</button>
+        </div>
+    }
+</section>
+
+<section>
+    <button class="bg-indigo-700 px-1.5 py-2.5 rounded text-white font-semibold mt-1.5" (click)="getUsers()">Fetch user</button>
+</section>
+

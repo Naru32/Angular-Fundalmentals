@@ -1,0 +1,13 @@
+<p>second-component works!</p>
+   <p>Role : {{currentRole}}</p>
+<app-card [header]="'Student Card'">
+     <p>Name: {{student.name}}</p>
+        <p>Age : {{student.age}}</p>
+        <p>Gender :{{student.gender}}</p>
+        <p>Company Name: {{student.collegeName}}</p>
+        <button (click)="change()">Change</button>
+</app-card>
+
+<input type="text" name="" id="" placeholder="Enter student name" class="border mt-1.5 px-1.5" [(ngModel)]="studentInfo" (input)="onChange($event)">
+
+<a routerLink="/signals">go to </a>

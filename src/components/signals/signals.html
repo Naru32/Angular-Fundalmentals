@@ -1,0 +1,28 @@
+<aside class="mt-2 p-2 bg-red-500 text-white rounded">
+        <h1 class="text-3xl">Signal</h1>
+        <p>Learn to create Signal, update signal, computed signal</p>
+</aside>
+
+<section class="grid grid-cols-4 grid-rows-2 gap-x-2.5"> 
+    <div class="flex flex-col justify-center items-start gap-y-2">
+        <p>Hii user {{user()}}</p>
+        <button class="py-2.5 px-1.5 bg-pink-400 text-white font-semibold rounded" (click)="changeUser()">Change User</button>
+    </div>
+    <div>
+        <p class="s text-cyan-900">Count : {{count()}}</p>
+        <button class="py-2.5 px-1.5 bg-pink-400 text-white font-semibold rounded" (click)="inc()">Increament</button>
+    </div>
+
+    <div class="flex flex-col gap-x-2.5 justify-center items-center text-teal-900"> 
+        <h1 class="text-2xl text-green-500">Cart</h1>
+        <span>Item count : {{itemCount()}}</span>
+        <span>Price : {{price()}}</span>
+        <span>Total : {{total()}}</span>
+        <div class="bg-indigo-300 w-full flex justify-evenly h-11 items-center rounded">
+            <button class="bg-green-700 px-2.5 text-white text-lg rounded cursor-pointer" (click)="addItem()">+</button>
+            <span class="font-semibold">{{itemCount()}}</span>
+            <button class="bg-red-600 px-2.5 text-lg text-white rounded cursor-pointer" (click)="removeItem()">-</button>
+        </div>
+    </div>
+
+</section>

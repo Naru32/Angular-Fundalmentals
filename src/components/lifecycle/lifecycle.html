@@ -1,0 +1,13 @@
+<p>lifecycle works</p>
+<p>{{name()}}</p>
+<p>{{count}}</p>
+
+<app-card [header]="'Employee Card'">
+     <p>Name: {{emp.name}}</p>
+        <p>Age : {{emp.age}}</p>
+        <p>Gender :{{emp.gender}}</p>
+        <p>Company Name: {{emp.companyName}}</p>
+</app-card>
+
+<button class="mt-1.5 mr-2 bg-cyan-200 text-gray-700 px-3.5 py-2 rounded" (click)="inc()">Inc</button>
+<button (click)="onClick()"  class="bg-green-500 text-gray-700 px-3.5 py-2 rounded" (click)="onClick()">Change</button>

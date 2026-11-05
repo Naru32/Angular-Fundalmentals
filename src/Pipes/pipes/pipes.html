@@ -1,0 +1,37 @@
+<aside class="mt-2 p-2 bg-red-300 text-white rounded">
+        <h1 class="text-3xl">Pipe in angular</h1>
+        <p>Built in Pipes & Custom </p>
+        <p>Role: {{currentRole}}</p>
+</aside>
+
+
+<section class="grid grid-cols-4 grid-rows-2 gap-y-3.5 gap-x-1.5">
+    <div>
+        <p>{{para | uppercase}}</p>
+    </div>
+    <div>
+        <p>{{para | lowercase}}</p>
+    </div>
+
+    <div>{{para | titlecase}}</div>
+    <div>
+        <p>Hello user : {{data | json}}</p>
+    </div>
+
+    <div>
+        <h1>With Async Pipe</h1>
+        <p>Date : {{time$ | async}}</p>
+    </div>
+
+    <div>
+        <h1>Without async pipe</h1>
+        <p>current Date : {{currentDate}}</p>
+    </div>
+    <div>
+        <p>{{'hello world' | capitalize}}</p>
+    </div>
+    <div>
+        <app-button [btnText]="'Click Pipe'" [btnCss]="'bg-red-600 px-2 py-1.5 rounded text-white cursor-pointer'"></app-button>
+    </div>
+    
+</section>

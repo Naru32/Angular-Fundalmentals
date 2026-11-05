@@ -1,0 +1,23 @@
+<aside class="mt-2 p-2 bg-blue-300 text-white rounded">
+        <h1 class="text-3xl">Attribute Directives</h1>
+        <p>*ngClass, *ngStyle</p>
+</aside>
+
+<section class="flex flex-col space-y-2.5">
+    <aside class="grid grid-cols-3 gap-2.5">
+        <div>
+            <div class="h-32 text-white" [ngClass]="bgColor">1</div>
+            <button class="bg-red-300 text-violet-950 px-1.5 py-2.5 rounded mt-1.5" (click)="addColor()">ChangeToPink</button>
+        </div>
+        <div>
+            <div class="h-32 text-white" [ngClass]="isAdmin ? 'bg-emerald-600' : 'bg-red-800' ">2</div>
+            <button class="bg-indigo-300 text-violet-950 px-1.5 py-2.5 rounded mt-1.5" (click)="changeToAdmin()">ChangeToAdmin</button>
+        </div>
+    <div>
+        <div [ngStyle]="css">3</div>
+     </div>
+     <div>
+        <p class="text-violet-950" appHighlight>Custom Behaviour</p>
+     </div>
+     </aside>
+</section>   

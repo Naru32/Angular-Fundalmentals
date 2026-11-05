@@ -1,0 +1,18 @@
+<aside class="mt-2 p-2 bg-red-300 text-fuchsia-950 rounded">
+        <h1 class="text-3xl">ng-template</h1>
+        <p>Learn conditional rendering and custom ui rendering </p>
+</aside>
+<section class="flex flex-col h-screen">
+     <div class="h-1/9 bg-indigo-500 mt-2 relative">
+        <h1 class="relative top-3.5 left-2.5 text-xl text-white">Welcome to Template</h1>
+        <ng-container #container>
+            
+        </ng-container>
+       <button class="p-1.5 bg-emerald-200" (click)="onClick()">Show</button>
+</div>
+</section>
+
+ <ng-template #View>
+        <p class="absolute right-4 text-lg text-indigo-100">Welcome user:{{userName}}</p>
+
+</ng-template>
